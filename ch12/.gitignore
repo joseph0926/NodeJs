@@ -19,7 +19,7 @@
 .env.production.local
 
 # Database
-./util/database.js
+database.js
 
 npm-debug.log*
 yarn-debug.log*
