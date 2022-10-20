@@ -8,7 +8,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 const adminRoutes = require("./routes/admin");
-// const shopRoutes = require("./routes/shop");
+const shopRoutes = require("./routes/shop");
 
 const errorController = require("./controllers/404");
 
@@ -32,12 +32,10 @@ app.use("/", (req, res, next) => {
 });
 
 app.use("/admin", adminRoutes);
-// app.use(shopRoutes);
+app.use(shopRoutes);
 
 app.use(errorController.getError);
 
 mongoConnect(() => {
   app.listen(3000);
 });
-
-
